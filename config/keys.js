@@ -1,5 +1,5 @@
 
-const mongoURI = 'mongodb://localhost/blogs';
+const mongoURI = 'mongodb+srv://scaliariy1:lPVm2qZODr1kuoQt@cluster0.jcovhxs.mongodb.net/?retryWrites=true&w=majority';
 
 const smtpConfig = {
     host: 'smtp.gmail.com',

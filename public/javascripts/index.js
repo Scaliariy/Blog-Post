@@ -59,7 +59,7 @@ $(document).ready(function() {
                         message: 'The password is required and cannot be empty'
                     },
                     regexp: {
-                        regexp: /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[$@!%?&]).{6,12}$/,
+                        regexp: /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{6,}$/,
                         message: 'Must contain at least one number and one uppercase and lowercase letter, and at least 6 or more characters'
                     }
                 }
@@ -70,7 +70,7 @@ $(document).ready(function() {
                         message: 'The confirm password is required and cannot be empty'
                     },
                     regexp: {
-                        regexp: /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[$@!%?&]).{6,12}$/,
+                        regexp: /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{6,}$/,
                         message: 'Must contain at least one number and one uppercase and lowercase letter, and at least 6 or more characters'
                     },
                     identical: {

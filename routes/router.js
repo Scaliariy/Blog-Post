@@ -38,6 +38,7 @@ function authenticate(passport) {
                     res.render("index", { posts: posts });
             }
         });
+    //     .lean()
     });
 
     // Login View
@@ -56,9 +57,11 @@ function authenticate(passport) {
 
     // Logout Handler
     router.all("/logout", function(req, res) {
-        req.logout();
-        req.session.destroy();
-        res.redirect("/login");
+        req.logout(function(err) {
+            if (err) { return err; }
+            req.session.destroy();
+            res.redirect("/login");
+        });
     });
 
     // Forgot password View
