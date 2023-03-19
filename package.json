@@ -4,12 +4,18 @@
   "description": "",
   "main": "app.js",
   "devDependencies": {
-    "nodemon": "^2.0.20"
+    "chromedriver": "^111.0.0",
+    "geckodriver": "^3.2.0",
+    "mocha": "^10.2.0",
+    "nodemon": "^2.0.20",
+    "selenium-webdriver": "^4.8.1",
+    "start-server-and-test": "^2.0.0"
   },
   "scripts": {
     "start": "node ./bin/www",
     "devstart": "nodemon ./bin/www",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha tests/*.spec.js",
+    "ci": "start-server-and-test start http://localhost:8080 test"
   },
   "dependencies": {
     "async": "^2.6.1",
