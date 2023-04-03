@@ -18,6 +18,11 @@ describe('login', function() {
     await driver.findElement(By.id("password")).click()
     await driver.findElement(By.id("password")).sendKeys("5asgCVdTdxEN8QY")
     await driver.findElement(By.id("login")).click()
+    driver.takeScreenshot().then(
+        function(image) {
+          require('fs').writeFileSync(`captured_image_after_login.png`, image, 'base64');
+        }
+    );
     await driver.findElement(By.css(".footer-copyright")).click()
     await driver.findElement(By.css("body")).click()
     await driver.findElement(By.id("log_out")).click()

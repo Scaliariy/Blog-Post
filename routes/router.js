@@ -290,11 +290,12 @@ function authenticate(passport) {
     // Post Details View
     router.get('/post/:id', loggedInOnly, function(req, res) {
         Post.findById(req.params.id, function (err, post) {
-            if(err) { 
+            if(err) {
                 req.flash('error', 'Something wrong happened with Post details.');
                 return res.redirect('/');
                 }
             else {
+                console.error(post);
                 res.render("post_detail", { layout: 'pre_signin', post: post });
             }
         });
